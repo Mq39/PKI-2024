@@ -1,59 +1,26 @@
-# Angular
+# PKI
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.1.
+This repositorium contains source code of the aplication developed in the Introduction to User Interfaces course.
 
-## Development server
+## Technologies
 
-To start a local development server, run:
+Aplication was developed using Angular 18 as the frontend framework.
 
-```bash
-ng serve
-```
+Libraries used:
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+- [Angular Material](https://material.angular.io/)
+- [Sweet Alerts 2](https://sweetalert2.github.io/)
 
-## Code scaffolding
+## Structure
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+Source code uses the standard structure of an Angular project without `app.modules.ts`. All the necessary modules are imported directly into the components which they are used by.
 
-```bash
-ng generate component component-name
-```
+Loren ipsum:
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+- `src/app` - Main folder containing all other components
+- `src/models` - Folder containing definitions of the types neccessary for a faster app development
+- `src/services` - Folder containing defitions of the services needed for running the aplication
 
-```bash
-ng generate --help
-```
+## Aditional information
 
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Aplication uses _Angular Router_ which requires that every path be redirected to the `index.html` page, because the routes are defined in the program itself, and not by existing files.
