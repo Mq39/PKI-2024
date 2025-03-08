@@ -5,6 +5,7 @@
 mat-toolbar {
   display: flex;
   justify-content: space-between;
+  background-color: #f8a145;
 }
 
 mat-icon {
