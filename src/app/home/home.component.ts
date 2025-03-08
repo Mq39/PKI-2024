@@ -5,6 +5,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { RouterLink } from '@angular/router';
 import { MatListModule } from '@angular/material/list';
+import { PageModel } from '../../models/page.model';
+import { FlightModel } from '../../models/flight.model';
 
 @Component({
   selector: 'app-home',
@@ -13,12 +15,12 @@ import { MatListModule } from '@angular/material/list';
   imports: [MatCardModule, MatButtonModule, HttpClientModule, NgIf, NgFor, RouterLink, MatListModule],
 })
 export class HomeComponent {
-  public recommended: any[] = [];
+  public recommended: FlightModel[] = [];
 
   constructor(client: HttpClient) {
     const url = 'https://flight.pequla.com/api/flight?page=0&size=3&type=departure&sort=scheduledAt,desc';
     client
-      .get<any>(url, {
+      .get<PageModel<FlightModel>>(url, {
         headers: {
           Accept: 'application/json',
         },

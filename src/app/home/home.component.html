@@ -6,8 +6,8 @@
     </mat-card-content>
     <mat-list role="list">
       <mat-list-item role="listitem">Scheduled for: {{ formatDate(flight.scheduledAt) }}</mat-list-item>
-      <mat-list-item role="listitem">Item 2</mat-list-item>
-      <mat-list-item role="listitem">Item 3</mat-list-item>
+      <mat-list-item role="listitem">Flight number: {{ flight.flightNumber }}</mat-list-item>
+      <mat-list-item role="listitem">Plane model: {{ flight.plane }}</mat-list-item>
     </mat-list>
     <mat-card-actions>
       <a mat-button [routerLink]="['flight/' + flight.id]"><i class="fa-solid fa-circle-info"></i> DETAILS</a>
