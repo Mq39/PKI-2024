@@ -1,11 +1,23 @@
 .example-card {
   max-width: 400px;
   background-color: #f8a145;
-  border: 0.1rem solid white;
+  border: 0.01rem solid #151515;
 }
 
 .container {
   margin-top: 30px;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
+  gap: 10px;
+}
+
+.search-card {
+  width: 900px;
+  background-color: #f8a145;
+}
+
+.search-form {
+  display: flex;
+  justify-content: left;
+  gap: 5px;
 }
