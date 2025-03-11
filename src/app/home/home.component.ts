@@ -9,6 +9,7 @@ import { PageModel } from '../../models/page.model';
 import { FlightModel } from '../../models/flight.model';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
+import { WebService } from '../../services/web.service';
 
 @Component({
   selector: 'app-home',
@@ -27,20 +28,19 @@ import { MatSelectModule } from '@angular/material/select';
   ],
 })
 export class HomeComponent {
+  private service: WebService;
   public recommended: FlightModel[] = [];
-  public destinations: string[] = ['Zagreb', 'Memmingen', 'Vienna'];
+  public destinations: string[] = [];
   public airlines: string[] = ['Air Serbia', 'Fly Emirates', 'Lufthansa'];
   public flightClasses: string[] = ['First class', 'Business', 'Economy'];
 
-  constructor(client: HttpClient) {
-    const url = 'https://flight.pequla.com/api/flight?page=0&size=3&type=departure&sort=scheduledAt,desc';
-    client
-      .get<PageModel<FlightModel>>(url, {
-        headers: {
-          Accept: 'application/json',
-        },
-      })
-      .subscribe((rsp) => (this.recommended = rsp.content));
+  constructor(private client: HttpClient) {
+    this.service = new WebService(client);
+  }
+
+  ngOnInit(): void {
+    this.service.getRecommendedFlghts().subscribe((rsp) => (this.recommended = rsp.content));
+    this.service.getAvailableDestinations().subscribe((rsp) => (this.destinations = rsp));
   }
 
   public generateImageUrl(dest: string) {
