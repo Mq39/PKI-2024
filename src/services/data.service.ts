@@ -13,4 +13,8 @@ export class DataService {
   public getFlightClass(): string[] {
     return ['First class', 'Business', 'Economy'];
   }
+
+  public formatDate(iso: string) {
+    return new Date(iso).toLocaleString('sr-RS');
+  }
 }

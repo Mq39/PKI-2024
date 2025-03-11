@@ -16,12 +16,6 @@ h5 {
   color: black;
 }
 
-.example-card {
-  max-width: 400px;
-  background-color: #f8a145;
-  border: 0.01rem solid #151515;
-}
-
 .container {
   margin-top: 30px;
   display: flex;
@@ -32,10 +26,17 @@ h5 {
 .search-card {
   width: 900px;
   background-color: #f8a145;
+  margin-bottom: 20px;
 }
 
 .search-form {
   display: flex;
   justify-content: left;
   gap: 5px;
+}
+
+.example-card {
+  max-width: 400px;
+  background-color: #f8a145;
+  border: 0.01rem solid #151515;
 }
