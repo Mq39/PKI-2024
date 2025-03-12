@@ -1,12 +1,13 @@
 .flight-wrapper {
   width: 80%;
+  height: 450px;
   margin-left: auto;
   margin-right: auto;
 }
 
 .flight-card {
   width: 49%;
-  height: 600px;
+  height: 650px;
 }
 
 .flight-content {
@@ -19,6 +20,6 @@
 
 .flight-map {
   margin: auto;
-  width: 100%;
-  height: 100%;
+  width: 100% !important ;
+  height: 100% !important;
 }

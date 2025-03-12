@@ -8,12 +8,21 @@ import { inject } from '@angular/core';
   providedIn: 'root',
 })
 export class WebService {
+  private static instance: WebService;
   private httpClient: HttpClient;
   private baseUrl: string;
 
-  constructor() {
+  private constructor() {
     this.httpClient = inject(HttpClient);
     this.baseUrl = 'https://flight.pequla.com/api';
+  }
+
+  public static getInstance(): WebService {
+    if (WebService.instance == null) {
+      WebService.instance = new WebService();
+    }
+
+    return WebService.instance;
   }
 
   public getRecommendedFlights() {
