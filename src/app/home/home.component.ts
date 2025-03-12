@@ -14,8 +14,7 @@ import { SearchContainerComponent } from '../search-container/search-container.c
 
 @Component({
   selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrl: './home.component.css',
+  standalone: true,
   imports: [
     MatCardModule,
     MatButtonModule,
@@ -28,6 +27,8 @@ import { SearchContainerComponent } from '../search-container/search-container.c
     MatSelectModule,
     SearchContainerComponent,
   ],
+  templateUrl: './home.component.html',
+  styleUrl: './home.component.css',
 })
 export class HomeComponent implements OnInit {
   public webService: WebService;

@@ -21,3 +21,10 @@
   justify-content: left;
   gap: 5px;
 }
+
+.loading-card {
+  width: 450px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
