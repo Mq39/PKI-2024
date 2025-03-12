@@ -1,18 +1,30 @@
 <div class="flight-wrapper" *ngIf="flight">
-  <div class="custom-row">
-    <div class="flight-img">
-      <img [src]="webService.generateImageUrl(flight.destination)" [alt]="flight.destination" />
-    </div>
-    <div class="flight-data">
-      <mat-card class="flight-data-card" appearance="outlined">
-        <mat-card-content>
-          <h1>{{ flight.destination }}</h1>
-          <p class="no-space">{{ flight.id }}</p>
-          <p class="no-space">{{ flight.flightNumber }}</p>
-          <p class="no-space">{{ flight.estimatedAt ? flight.estimatedAt : flight.scheduledAt }}</p>
-        </mat-card-content>
-      </mat-card>
-    </div>
+  <h1>{{ flight.destination }}</h1>
+  <div class="flight-content">
+    <mat-card class="flight-card" appearance="outlined">
+      <img mat-card-image src="{{ this.webService.generateImageUrl(flight.destination) }}" alt="Photo of a Shiba Inu" />
+      <mat-card-content>
+        <p>
+          The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan. A small, agile
+          dog that copes very well with mountainous terrain, the Shiba Inu was originally bred for hunting.
+        </p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button>LIKE</button>
+        <button mat-button>SHARE</button>
+      </mat-card-actions>
+    </mat-card>
+    <mat-card class="flight-card" appearance="outlined"
+      ><iframe
+        mat-card-image
+        class="flight-map"
+        height="400"
+        [src]="generateMapLink() | safe"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        id="gmaps"
+      ></iframe
+    ></mat-card>
   </div>
-  <div class="custom-row">GOOGLE MAPS INTEGRATION..</div>
 </div>

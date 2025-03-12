@@ -1,18 +1,24 @@
 .flight-wrapper {
   width: 80%;
-  height: 450px;
   margin-left: auto;
   margin-right: auto;
 }
 
-.custom-row {
-  display: flex;
-  gap: 20px;
-  align-items: center;
+.flight-card {
+  width: 49%;
+  height: 600px;
 }
 
-.flight-data-card {
+.flight-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex-direction: row;
+}
+
+.flight-map {
+  margin: auto;
   width: 100%;
-  background-color: #f8a145;
-  border: 0.01rem solid #151515;
+  height: 100%;
 }

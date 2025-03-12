@@ -5,10 +5,12 @@ import { WebService } from '../../services/web.service';
 import { HttpClientModule } from '@angular/common/http';
 import { NgIf } from '@angular/common';
 import { MatCard, MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
+import { SafePipe } from '../safe.pipe';
 
 @Component({
   selector: 'app-flight',
-  imports: [HttpClientModule, NgIf, MatCardModule],
+  imports: [HttpClientModule, NgIf, MatCardModule, MatButtonModule, SafePipe],
   templateUrl: './flight.component.html',
   styleUrl: './flight.component.css',
 })
@@ -23,5 +25,9 @@ export class FlightComponent {
         this.flight = rsp;
       });
     });
+  }
+
+  public generateMapLink() {
+    return 'https://www.google.com/maps?output=embed&q=' + this.flight?.destination;
   }
 }
