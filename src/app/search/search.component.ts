@@ -1,8 +1,8 @@
 import { WebService } from '../../services/web.service';
 import { DataService } from '../../services/data.service';
 import { HttpClientModule } from '@angular/common/http';
-import { Component, inject, OnInit, ViewChild } from '@angular/core';
-import { NgFor, NgIf } from '@angular/common';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { NgIf } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { RouterLink } from '@angular/router';
@@ -28,7 +28,6 @@ import { PageModel } from '../../models/page.model';
     MatSortModule,
     HttpClientModule,
     NgIf,
-    NgFor,
     RouterLink,
     SearchContainerComponent,
   ],
